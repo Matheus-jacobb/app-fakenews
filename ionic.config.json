@@ -1,0 +1,7 @@
+{
+  "name": "FakeNews",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
