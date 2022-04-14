@@ -6,6 +6,9 @@ import { Tab1Page } from './tab1.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
+import { NewsCardComponent } from '../components/news-card/news-card.component';
+import { NewsCardModule } from '../components/news-card/news-card.module';
+import { newsProxy } from 'src/models/proxies/news.proxy';
 
 @NgModule({
   imports: [
@@ -13,8 +16,10 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab1PageRoutingModule
+    Tab1PageRoutingModule,
+    NewsCardModule
   ],
   declarations: [Tab1Page]
 })
-export class Tab1PageModule {}
+export class Tab1PageModule {
+}
