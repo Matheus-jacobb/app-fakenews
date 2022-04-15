@@ -12,6 +12,7 @@ export class CreationInputComponent implements OnInit {
   //#region Inputs
   @Input() text: string;
   @Input() isTextArea: boolean = false;
+  @Input() isImage: boolean = false;
   //#endregion
 
   ngOnInit() {}
