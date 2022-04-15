@@ -7,6 +7,8 @@ import { Tab2Page } from './tab2.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
+import { ArrowCircleModule } from '../components/arrow-circle/arrow-circle.module';
+import { CreationInputModule } from '../components/creation-input/creation-input.module';
 
 @NgModule({
   imports: [
@@ -14,7 +16,9 @@ import { Tab2PageRoutingModule } from './tab2-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab2PageRoutingModule
+    Tab2PageRoutingModule,
+    ArrowCircleModule,
+    CreationInputModule
   ],
   declarations: [Tab2Page]
 })

@@ -1,0 +1,8 @@
+<span>
+  <p>{{text}}</p>
+  <textarea *ngIf="isTextArea; else elseCondition"></textarea>
+  <ng-template #elseCondition>
+    <input type="text">
+  </ng-template>
+</span>
+
