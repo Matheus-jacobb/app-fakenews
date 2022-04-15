@@ -1,4 +1,4 @@
-# CompSpace
+# FakeNewsApp
 
 ## 🖼️ **Preview**
 You can see the design on this platform: [Figma](https://github.com/Matheus-jacobb/CompSpace/archive/refs/heads/develop.zip)
@@ -45,8 +45,7 @@ First you need to clone the repository on your machine using the command below i
 ---
  - [Node v16.14.2](https://nodejs.org/en/)
 
- Pay attention to the version needs to be **v16.14.2**
- ---
+Pay attention to the version needs to be **v16.14.2**
 
 <br>
 
