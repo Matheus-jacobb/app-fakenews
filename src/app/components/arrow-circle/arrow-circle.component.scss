@@ -16,6 +16,11 @@ button {
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   overflow: hidden;
+
+  ion-icon {
+    font-size: 2.2rem;
+    color: #000;
+  }
 }
 
 button:after {

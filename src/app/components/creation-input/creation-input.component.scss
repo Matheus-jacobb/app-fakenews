@@ -29,14 +29,14 @@ textarea {
   height: 12rem;
   background: rgba(76, 76, 76, 0.26);
   border-radius: 20px;
-  border:0 none;
+  border: 0 none;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  svg {
-    filter: brightness(120%);
+  ion-icon {
+    font-size: 2.5rem;
   }
 }
 
