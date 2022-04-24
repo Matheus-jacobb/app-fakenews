@@ -1,0 +1,25 @@
+<section class="header">
+
+  <ion-header class="header">
+      <ion-title [class.disable-text]="activeInput" >
+        FAKE-NEWS
+      </ion-title>
+  
+      <ion-icon>
+      </ion-icon>
+
+      <section class="header--input">
+        <input class="searchbar" [class.searchbar-active]="activeInput" type="text">
+        <div class="search-icon">
+          <ion-icon (click)="activeInput = !activeInput" name="search"></ion-icon>
+        </div>
+      </section>
+
+      <section class="header--profile">
+        <img class="header--profile-image" src="assets/imgs/profile_photo.jpg" alt="">
+      </section>
+
+  </ion-header>
+
+    
+</section>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { newsProxy } from 'src/models/proxies/news.proxy';
 
 @Component({
@@ -6,7 +6,7 @@ import { newsProxy } from 'src/models/proxies/news.proxy';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit{
 
   constructor() {}
   
@@ -27,4 +27,8 @@ export class Tab1Page {
     imageSrc: 'data:image/jpeg;base64,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'
   }
   ]
+
+  public ngOnInit(): void {
+      this.news = [...this.news, ...this.news, ...this.news];
+  }
 }

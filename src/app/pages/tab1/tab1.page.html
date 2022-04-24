@@ -1,0 +1,7 @@
+<app-header></app-header>
+<ion-content [fullscreen]="true">
+
+  <ng-container *ngFor="let new of news">
+    <app-news-card [news]="new"></app-news-card>
+  </ng-container>
+</ion-content>

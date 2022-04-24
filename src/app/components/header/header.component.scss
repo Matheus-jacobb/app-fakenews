@@ -1,0 +1,80 @@
+.header{
+  display: flex;
+  min-height: 5rem;
+  background-color: var(--ion-background-color);
+
+  position: relative;
+
+  &--profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-right: 1rem;
+
+    &-image{
+      height: 3rem;
+      width: 3rem;
+      
+      border-radius: 50px;
+      object-fit: cover;
+      
+      border: 2px solid rgb(140, 140, 140);
+    }
+  
+  }
+
+  &--input{
+    display: flex;
+    align-items: center;
+    
+    .searchbar{
+      width: 0;
+      
+      position: absolute;
+      right: 5rem;
+      
+      border-radius: 50px;
+      border: none;
+      padding: 0;
+      
+      transition: 0.25s;
+
+      &-active{
+          width: 18rem;
+          height: 2rem;
+          padding: 0 3.1rem 0 1rem;
+      }
+
+      &:focus{
+        outline: 1px solid ;
+      }
+    }
+
+    .search-icon{
+      position: absolute;
+      right: 5rem;
+      background-color: grey;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 3rem;
+      width: 3rem;
+      border-radius: 50px;
+
+      ion-icon{
+        font-size: 1.25rem;
+      }
+    }
+  }
+  .disable-text{
+    opacity: 0;
+    transition: 0.1s;
+  }
+
+}
+
+ion-title{
+  opacity: 1;
+  transition: 0.1s
+}
