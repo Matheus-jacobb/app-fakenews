@@ -28,7 +28,16 @@ export class Tab1Page implements OnInit{
   }
   ]
 
+  public newsFiltered: newsProxy[];
+
+  
   public ngOnInit(): void {
-      this.news = [...this.news, ...this.news, ...this.news];
+    this.news = [...this.news, ...this.news, ...this.news];
+    this.newsFiltered = [...this.news];
+  }
+
+  public searchCards(value: string){
+    this.newsFiltered = [...this.news];
+    this.newsFiltered = this.news.filter((a) => a.description.toLowerCase().includes(value.toLowerCase()) );
   }
 }

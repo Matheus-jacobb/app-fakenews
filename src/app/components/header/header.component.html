@@ -1,17 +1,17 @@
 <section class="header">
 
   <ion-header class="header">
-      <ion-title [class.disable-text]="activeInput" >
+      <ion-title [class.disable-text]="openInput" >
         FAKE-NEWS
       </ion-title>
   
       <ion-icon>
       </ion-icon>
 
-      <section class="header--input">
-        <input class="searchbar" [class.searchbar-active]="activeInput" type="text">
+      <section *ngIf="activeSearchBar" class="header--input">
+        <input class="searchbar" [class.searchbar-active]="openInput" [(ngModel)]="model" (ngModelChange)="searchCards($event)" type="text">
         <div class="search-icon">
-          <ion-icon (click)="activeInput = !activeInput" name="search"></ion-icon>
+          <ion-icon (click)="openInput = !openInput" name="search"></ion-icon>
         </div>
       </section>
 
