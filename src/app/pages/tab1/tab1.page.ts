@@ -36,8 +36,9 @@ export class Tab1Page implements OnInit{
     this.newsFiltered = [...this.news];
   }
 
-  public searchCards(value: string){
+  public searchCards(value: string): void{
     this.newsFiltered = [...this.news];
     this.newsFiltered = this.news.filter((a) => a.description.toLowerCase().includes(value.toLowerCase()) );
+    //TODO: IMPLEMENTS API REQUEST HERE WITH FILTER
   }
 }

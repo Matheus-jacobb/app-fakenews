@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
 
   //#region public methods
 
-  public searchCards(value: string){
+  public searchCards(value: string): void{
     this.searchBarValue.emit(value);
   }
   //#endregion
