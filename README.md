@@ -20,10 +20,7 @@ You can see the design on this platform: [Figma](https://github.com/Matheus-jaco
 
 The project was developed using the following technologies:
 
-- HTML
-- CSS
-- JavaScript  
-- Socket.io 
+- Ionic
  
 <br>
 
