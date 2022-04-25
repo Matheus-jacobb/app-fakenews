@@ -26,10 +26,22 @@
 </ng-template>
 
 <ng-template #coverImage >
-  <app-creation-input 
+  <section
+  class="coverImage"
   [class.currentInput]="currentTab === createNewsEnum.COVER_IMAGE" 
-  [class.swipeToLeft]="currentTab === createNewsEnum.URL" 
-  text="Qual o imagem da notícia?"></app-creation-input>
+  [class.swipeToLeft]="currentTab === createNewsEnum.URL" >
+  <p>Foto de capa</p>
+  <label class="photo-container" for="file-selection">
+    <ion-icon *ngIf="coverPhoto === ''" class="photo-container-icon" name="camera-outline"></ion-icon>
+    <img *ngIf="coverPhoto!==''" [src]="coverPhoto" alt="">
+  </label>
+
+  <input type="file" 
+  accept="image/*"
+  id="file-selection" 
+  (change)="handleFileInput($event.target.files[0])"
+  >
+</section>
 </ng-template>
 
 <ng-template #url >
