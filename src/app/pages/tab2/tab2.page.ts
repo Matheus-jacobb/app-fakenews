@@ -22,7 +22,7 @@ export class Tab2Page {
     if(this.isAnimationRunning)
       return
 
-    if(this.currentTab === createNewsEnum.DESCRIPTION){
+    if(this.currentTab === createNewsEnum.POSTED){
       this.currentTab = 0
     }
 

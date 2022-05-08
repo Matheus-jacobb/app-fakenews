@@ -17,16 +17,21 @@
 }
 
 .coverImage{
+
+  p{
+    margin: 0.5rem 0;
+  }
+
   .photo-container{
     height: 15rem;
     width: 20rem;
     background-color: #424C4C4C;
     border-radius: 20px;
-  
+
     display: flex;
     align-items: center;
     justify-content: center;
-  
+
     &-icon{
       color: rgba(255, 255, 255, 0.2);
       font-size: 3rem;
@@ -39,22 +44,38 @@
       border-radius: 20px;
       padding: 5px;
     }
-  
+
   }
   input[type='file']{
     display: none;
   }
 }
 
+.posted-container{
+  display: flex;
+  justify-content: center;
 
-app-creation-input, .coverImage{
+  height: 15rem;
+  width: 20rem;
+
+  &-icon{
+    color: rgba(137, 189, 158);
+    font-size: 10rem;
+  }
+
+  p{
+    margin: 0;
+  }
+}
+
+app-creation-input, .coverImage, .posted-container{
   width: 80%;
 
   position: absolute;
-  left: 0; 
-  right: 0; 
-  margin-right: auto; 
-  margin-left: auto; 
+  left: 0;
+  right: 0;
+  margin-right: auto;
+  margin-left: auto;
 
   transform: translateX(100vh);
   transition: transform 1s;
