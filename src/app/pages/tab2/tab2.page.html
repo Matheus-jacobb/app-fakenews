@@ -32,18 +32,23 @@
   class="coverImage"
   [class.currentInput]="currentTab === createNewsEnum.COVER_IMAGE"
   [class.swipeToLeft]="currentTab === createNewsEnum.URL" >
-  <p>Foto de capa</p>
-  <label class="photo-container" for="file-selection">
-    <ion-icon *ngIf="coverPhoto === ''" class="photo-container-icon" name="camera-outline"></ion-icon>
-    <img *ngIf="coverPhoto!==''" [src]="coverPhoto" alt="">
-  </label>
+    <p>Foto de capa</p>
+    <label class="photo-container" for="file-selection">
+      <ion-icon *ngIf="coverPhoto === ''" class="photo-container-icon" name="camera-outline"></ion-icon>
+      <img *ngIf="coverPhoto!==''" [src]="coverPhoto" alt="">
+    </label>
 
-  <input type="file"
-  accept="image/*"
-  id="file-selection"
-  (change)="handleFileInput($event.target.files[0])"
-  >
-</section>
+    <input type="file"
+    accept="image/*"
+    id="file-selection"
+    (change)="handleFileInput($event.target.files[0])"
+    >
+
+    <div class="colorPick">
+      <app-color-picker></app-color-picker>
+    </div>
+  </section>
+
 </ng-template>
 
 <ng-template #url >

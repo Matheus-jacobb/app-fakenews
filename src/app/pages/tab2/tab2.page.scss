@@ -17,7 +17,6 @@
 }
 
 .coverImage{
-
   p{
     margin: 0.5rem 0;
   }
@@ -46,8 +45,13 @@
     }
 
   }
+
   input[type='file']{
     display: none;
+  }
+
+  .colorPick{
+    margin-top: 3rem;
   }
 }
 
