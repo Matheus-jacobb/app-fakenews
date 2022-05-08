@@ -1,0 +1,47 @@
+.color-picker{
+  text-align: center;
+
+  .radio-group{
+    display: flex;
+    justify-content: space-evenly;
+
+    input[type='radio']{
+      visibility: hidden;
+      height: 0;
+      width: 0;
+    }
+
+    input[type='radio']:checked + label{
+      border: 0.3rem solid rgba(255, 255, 255, 0.75);;
+      width: 35px;
+      height: 35px;
+    }
+
+    label{
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+    }
+
+    .grey{
+      background-color: #C4C4C4;
+    }
+
+    .blue{
+      background-color: #83B5D1;
+    }
+
+    .red{
+      background-color: #DB4C40;
+    }
+
+    .yellow{
+      background-color: #F0C987;
+    }
+
+    .green{
+      background-color: #89BD9E;
+    }
+  }
+}
+
