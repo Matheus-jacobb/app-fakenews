@@ -12,6 +12,7 @@
       <ng-container *ngTemplateOutlet="title" ></ng-container>
       <ng-container *ngTemplateOutlet="coverImage" ></ng-container>
       <ng-container *ngTemplateOutlet="url" ></ng-container>
+      <ng-container *ngTemplateOutlet="description" ></ng-container>
     </div>
     <app-arrow-circle (click)="nextPage()" ></app-arrow-circle>
   </div>
@@ -21,14 +22,14 @@
 <ng-template #title >
   <app-creation-input
   [class.currentInput]="currentTab === createNewsEnum.TITLE"
-  [class.swipeToLeft]="currentTab === createNewsEnum.COVER_IMAGE" 
+  [class.swipeToLeft]="currentTab === createNewsEnum.COVER_IMAGE"
   text="Qual o título da notícia?"></app-creation-input>
 </ng-template>
 
 <ng-template #coverImage >
   <section
   class="coverImage"
-  [class.currentInput]="currentTab === createNewsEnum.COVER_IMAGE" 
+  [class.currentInput]="currentTab === createNewsEnum.COVER_IMAGE"
   [class.swipeToLeft]="currentTab === createNewsEnum.URL" >
   <p>Foto de capa</p>
   <label class="photo-container" for="file-selection">
@@ -36,16 +37,26 @@
     <img *ngIf="coverPhoto!==''" [src]="coverPhoto" alt="">
   </label>
 
-  <input type="file" 
+  <input type="file"
   accept="image/*"
-  id="file-selection" 
+  id="file-selection"
   (change)="handleFileInput($event.target.files[0])"
   >
 </section>
 </ng-template>
 
 <ng-template #url >
-  <app-creation-input 
-  [class.currentInput]="currentTab === createNewsEnum.URL" 
+  <app-creation-input
+  isOptional="true"
+  [class.currentInput]="currentTab === createNewsEnum.URL"
+  [class.swipeToLeft]="currentTab === createNewsEnum.DESCRIPTION"
   text="Qual a URL da notícia?"></app-creation-input>
+</ng-template>
+
+<ng-template #description >
+  <app-creation-input
+  isOptional="true"
+  isTextArea="true"
+  [class.currentInput]="currentTab === createNewsEnum.DESCRIPTION"
+  text="Conte-nos melhor sobre o assunto"></app-creation-input>
 </ng-template>

@@ -13,6 +13,7 @@ export class CreationInputComponent implements OnInit {
   @Input() text: string;
   @Input() isTextArea: boolean = false;
   @Input() isImage: boolean = false;
+  @Input() isOptional: boolean = false;
   //#endregion
 
   ngOnInit() {}

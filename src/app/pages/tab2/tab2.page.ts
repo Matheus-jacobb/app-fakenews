@@ -14,7 +14,7 @@ export class Tab2Page {
   ) {}
 
   public createNewsEnum: typeof createNewsEnum = createNewsEnum;
-  public currentTab:number = createNewsEnum.COVER_IMAGE;
+  public currentTab:number = createNewsEnum.TITLE;
   public coverPhoto:string = '';
   public isAnimationRunning: boolean = false;
 
@@ -22,10 +22,10 @@ export class Tab2Page {
     if(this.isAnimationRunning)
       return
 
-    if(this.currentTab === createNewsEnum.URL){
+    if(this.currentTab === createNewsEnum.DESCRIPTION){
       this.currentTab = 0
     }
-    
+
     this.currentTab++;
     this.isAnimationRunning = true;
 
