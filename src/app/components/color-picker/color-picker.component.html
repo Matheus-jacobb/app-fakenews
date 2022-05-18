@@ -1,19 +1,19 @@
 <div class="color-picker">
   <p>Cor de fundo da publicação</p>
   <div class="radio-group">
-    <input id="grey" type='radio' name="color" checked/>
-    <label class="grey" for="grey"></label>
+    <input id="grey" type='radio' name="color"/>
+    <label class="grey" for="grey" (click)="searchCards(newsColorEnum.GREY)" ></label>
 
     <input id="blue" type='radio' name="color"/>
-    <label class="blue" for="blue"></label>
+    <label class="blue" for="blue" (click)="searchCards(newsColorEnum.BLUE)"></label>
 
     <input id="red" type='radio' name="color"/>
-    <label class="red" for="red"></label>
+    <label class="red" for="red" (click)="searchCards(newsColorEnum.RED)"></label>
 
     <input id="yellow" type='radio' name="color"/>
-    <label class="yellow" for="yellow"></label>
+    <label class="yellow" for="yellow" (click)="searchCards(newsColorEnum.YELLOW)"></label>
 
     <input id="green" type='radio' name="color"/>
-    <label class="green" for="green"></label>
+    <label class="green" for="green" (click)="searchCards(newsColorEnum.GREEN)"></label>
   </div>
 </div>

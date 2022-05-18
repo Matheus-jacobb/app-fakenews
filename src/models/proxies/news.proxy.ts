@@ -1,5 +1,7 @@
 export interface newsProxy {
-  description: string;
+  title: string;
+
+  description?: string;
 
   imageSrc: string;
 

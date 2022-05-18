@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-creation-input',
@@ -16,6 +16,19 @@ export class CreationInputComponent implements OnInit {
   @Input() isOptional: boolean = false;
   //#endregion
 
+  //#region Outputs
+
+  @Output()
+  public textInput = new EventEmitter<string>();
+
+  public model = '';
+
+  //#endregion
+
   ngOnInit() {}
+
+  public onChangeInput(value: string): void{
+    this.textInput.emit(value);
+  }
 
 }

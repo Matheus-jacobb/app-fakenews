@@ -15,7 +15,7 @@
   </ng-template>
 
   <ng-template #elseCondition>
-    <input type="text">
+    <input [(ngModel)]="model" (ngModelChange)="onChangeInput($event)" type="text">
   </ng-template>
 
   <p *ngIf="isOptional">(opcional)</p>

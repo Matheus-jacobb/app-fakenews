@@ -24,14 +24,15 @@
   <app-creation-input
   [class.currentInput]="currentTab === createNewsEnum.TITLE"
   [class.swipeToLeft]="currentTab === createNewsEnum.COVER_IMAGE"
-  text="Qual o título da notícia?"></app-creation-input>
+  text="Qual o título da notícia?"
+  (textInput)="takeInfoForInput($event, 'title')"></app-creation-input>
 </ng-template>
 
 <ng-template #coverImage >
   <section
   class="coverImage"
   [class.currentInput]="currentTab === createNewsEnum.COVER_IMAGE"
-  [class.swipeToLeft]="currentTab === createNewsEnum.URL" >
+  [class.swipeToLeft]="currentTab === createNewsEnum.URL">
     <p>Foto de capa</p>
     <label class="photo-container" for="file-selection">
       <ion-icon *ngIf="coverPhoto === ''" class="photo-container-icon" name="camera-outline"></ion-icon>
@@ -45,7 +46,7 @@
     >
 
     <div class="colorPick">
-      <app-color-picker></app-color-picker>
+      <app-color-picker (takeColor)="takeColor($event)" ></app-color-picker>
     </div>
   </section>
 
@@ -53,7 +54,7 @@
 
 <ng-template #url >
   <app-creation-input
-  isOptional="true"
+  [isOptional]="true"
   [class.currentInput]="currentTab === createNewsEnum.URL"
   [class.swipeToLeft]="currentTab === createNewsEnum.DESCRIPTION"
   text="Qual a URL da notícia?"></app-creation-input>
@@ -61,8 +62,8 @@
 
 <ng-template #description >
   <app-creation-input
-  isOptional="true"
-  isTextArea="true"
+  [isOptional]="true"
+  [isTextArea]="true"
   [class.currentInput]="currentTab === createNewsEnum.DESCRIPTION"
   [class.swipeToLeft]="currentTab === createNewsEnum.POSTED"
   text="Conte-nos melhor sobre o assunto"></app-creation-input>

@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit {
   @Output()
   public searchBarValue = new EventEmitter<string>();
   
-  
   ngOnInit() {}
 
   //#region public methods
