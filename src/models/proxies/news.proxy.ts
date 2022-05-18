@@ -1,4 +1,6 @@
 export interface newsProxy {
+  userName?: string;
+
   title: string;
 
   description?: string;
