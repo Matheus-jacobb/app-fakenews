@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from 'src/app/services/news.service';
 import { newsProxy } from 'src/models/proxies/news.proxy';
+import { NewsStorage } from 'src/models/storage/news.storage';
 
 @Component({
   selector: 'app-tab1',
@@ -15,7 +16,8 @@ export class Tab1Page {
 
   constructor(
     private readonly newsService: NewsService,
-  ) {}
+    private readonly newsStorage: NewsStorage
+  ) { }
 
   //#region public properties
 
@@ -23,6 +25,7 @@ export class Tab1Page {
 
   //#region Life-Cycle
   public ionViewDidEnter(): void {
+    console.log(this.getNews());
     this.loadNews();
     this.newsFiltered = [...this.news];
   }
@@ -37,8 +40,20 @@ export class Tab1Page {
   }
 
   public loadNews(): void {
-    this.news = this.newsService.getNews();
-    console.log(this.news);
+    this.news = [
+      ...this.getStorageNews(),
+      ...this.getNews()
+    ];
+  }
+
+  public getStorageNews(): newsProxy[] {
+    this.news = this.newsStorage.getNews();
+    return this.news;
+  }
+
+  public getNews(): newsProxy[] {
+    let news = this.newsService.getNews();
+    return news;
   }
 
   //#endregion

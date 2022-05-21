@@ -8,4 +8,8 @@ export interface newsProxy {
   imageSrc: string;
 
   color: string;
+
+  realRating: number;
+
+  fakeRating: number;
 }

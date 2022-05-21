@@ -15,7 +15,7 @@
       <ng-container *ngTemplateOutlet="description" ></ng-container>
       <ng-container *ngTemplateOutlet="posted" ></ng-container>
     </div>
-    <app-arrow-circle (click)="nextPage()"></app-arrow-circle>
+    <button (click)="nextPage()" [class.disabledButton]="!buttonEnable"><ion-icon name="arrow-forward"></ion-icon></button>
   </div>
 
 </ion-content>

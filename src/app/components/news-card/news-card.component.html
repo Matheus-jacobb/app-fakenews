@@ -1,17 +1,17 @@
 <div #card class="card" 
-[ngStyle]="{'background-image': 'url(' + news.imageSrc + ')'}">
+[ngStyle]="news.imageSrc ? {'background-image': 'url(' + news.imageSrc + ')'} : {'background-color': news.color}">
 
   <section class="ratings">
     <div class="ratings-background">
       <i class="ratings-success"><img src="" alt=""></i>
-      <p>123</p>
+      <p>{{news.realRating}}</p>
       <i class="ratings-error"><img src="" alt=""></i>
-      <p>123</p>
+      <p>{{news.fakeRating}}</p>
     </div>
   </section>
 
   <section class="title">
-    <p>{{news.description}}</p>
+    <p>{{news.title}}</p>
   </section>
 
   <div class="card-gradient"></div>

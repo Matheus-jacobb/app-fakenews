@@ -6,8 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./creation-input.component.scss'],
 })
 export class CreationInputComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   //#region Inputs
   @Input() text: string;
@@ -20,14 +19,13 @@ export class CreationInputComponent implements OnInit {
 
   @Output()
   public textInput = new EventEmitter<string>();
-
+  
   public model = '';
-
   //#endregion
 
   ngOnInit() {}
 
-  public onChangeInput(value: string): void{
+  public onChangeInput(value: string): void {
     this.textInput.emit(value);
   }
 

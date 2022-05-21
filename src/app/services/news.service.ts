@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { BehaviorSubject } from "rxjs";
 import { newsProxy } from "src/models/proxies/news.proxy";
 
 @Injectable({
@@ -9,6 +10,7 @@ export class NewsService {
 
 
   public news: newsProxy[] = [];
+  public modelBehavior: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
   public getNews(): newsProxy[] {
     return this.news;
