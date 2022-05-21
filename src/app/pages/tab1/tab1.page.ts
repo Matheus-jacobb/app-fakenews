@@ -5,25 +5,24 @@ import { newsProxy } from 'src/models/proxies/news.proxy';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  styleUrls: ['tab1.page.scss'],
 })
-export class Tab1Page implements OnInit{
-
-  constructor(
-    private readonly newsService: NewsService,
-  ) {}
-  
-    //#region public properties
+export class Tab1Page {
 
   public news: newsProxy[];
 
   public newsFiltered: newsProxy[];
 
-    //#endregion
+  constructor(
+    private readonly newsService: NewsService,
+  ) {}
+
+  //#region public properties
+
+  //#endregion
 
   //#region Life-Cycle
-
-  public ngOnInit(): void {
+  public ionViewDidEnter(): void {
     this.loadNews();
     this.newsFiltered = [...this.news];
   }
@@ -31,9 +30,9 @@ export class Tab1Page implements OnInit{
   //#endregion
 
   //#region public methods
-  public searchCards(value: string): void{
+  public searchCards(value: string): void {
     this.newsFiltered = [...this.news];
-    this.newsFiltered = this.news.filter((a) => a.description.toLowerCase().includes(value.toLowerCase()) );
+    this.newsFiltered = this.news.filter((a) => a.description.toLowerCase().includes(value.toLowerCase()));
     //TODO: IMPLEMENTS API REQUEST HERE WITH FILTER
   }
 
@@ -41,5 +40,6 @@ export class Tab1Page implements OnInit{
     this.news = this.newsService.getNews();
     console.log(this.news);
   }
+
   //#endregion
 }
