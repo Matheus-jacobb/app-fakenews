@@ -1,7 +1,7 @@
 # FakeNewsApp
 
 ## 🖼️ **Preview**
-You can see the design on this platform: [Figma](https://github.com/Matheus-jacobb/CompSpace/archive/refs/heads/develop.zip)
+You can see the design on this platform: [Figma.com](https://www.figma.com/file/NcVEu1j4nLkyL3hcljvoqt/PA7---FAKENEWS-APP?node-id=32%3A135)
 
 ---
 ## 📃 **About**
@@ -69,8 +69,8 @@ The url will look like http://localhost:4200
 ```
 <br>
 
-## **It will also possible to test the project on heroku** 
-
+## **You can enjoy here** 
+ - https://app-fakenews.vercel.app/
 <br>
 
 ---
