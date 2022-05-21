@@ -3,6 +3,8 @@
 ## 🖼️ **Preview**
 You can see the design on this platform: [Figma.com](https://www.figma.com/file/NcVEu1j4nLkyL3hcljvoqt/PA7---FAKENEWS-APP?node-id=32%3A135)
 
+![img](src/assets/imgs/git_template.png)
+
 ---
 ## 📃 **About**
 
