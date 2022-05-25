@@ -1,4 +1,6 @@
 const validateFields = require("./utils/validate-fields");
+const createNews = require("./controllers/newsCreator")
+import mongoose from "mongoose";
 
 module.exports = (payload) => {
     try{
@@ -7,7 +9,8 @@ module.exports = (payload) => {
             description,
             updateDate,
             linkNews,
-            likes
+            likes,
+            operation
         } = payload.body;
 
         const fieldsPayload = [
@@ -27,23 +30,47 @@ module.exports = (payload) => {
             },{
                 name: 'likes',
                 type: 'inteiro'
-            }  
+            },
+            {
+                name: 'operation',
+                type: 'string'
+            }    
         ]
-        const validateFieldsBody = await validateFields(
+        const validateFieldsBody = validateFields(
             fieldsPayload,
             payload.body
         )
-
+        
         if(validateFieldsBody){
             throw new Error({
                 validateFieldsBody
             })
         }
+
+        var data = {
+            nameNews,
+            description,
+            updateDate,
+            linkNews,
+            likes,
+        }
+
+                
+        //Connectando no mongo
+        const uri = "{YourMongoConnectionAPI}";
+        mongoose.connect(uri);
+        //----
+
+
+        if(operation === "create"){
+            createNews.handle(data)
+        }
+        
     }
     catch(err){
         throw new Error(
             {
-                'message':'Undortunately, it was not possible to process your request. Try again later.'
+                'message':'Unfortunately, it was not possible to process your request. Try again later.'
             }
         );
     }
