@@ -16,7 +16,8 @@ You can see the design on this platform: [Figma.com](https://www.figma.com/file/
 
 &nbsp;&nbsp;&nbsp;&nbsp;Describing the features of the application, it allows users to access certain news registered by other users, it also allows them to evaluate such news according to their opinion, demonstrating whether that news is a possible fakenews or a possible true news.
 
-&nbsp;&nbsp;&nbsp;&nbsp;Another functionality would be for the user to also be able to register their own news in the application, placing name, description, a photo of the news and a link to where it can be found, so that other users can also see it in the application and express their opinion. on.
+&nbsp;&nbsp;&nbsp;&nbsp;Another functionality would be for the user to also be able to register their own news in the application, placing name, description, photo of the news and link where it can be found, so that other users can also see it in the application and put their opinion about it.
+
 <br>
 
 ---
