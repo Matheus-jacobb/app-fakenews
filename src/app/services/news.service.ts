@@ -1,46 +1,45 @@
-import { Injectable } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
-import { newsProxy } from "src/models/proxies/news.proxy";
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { NewsProxy } from 'src/models/proxies/news.proxy';
+import { NewsStorage } from '../../models/storage/news.storage';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 
 export class NewsService {
 
+  constructor(
+    private readonly newsStorage: NewsStorage,
+  ) {
+    this.news = this.newsStorage.getNews();
+  }
 
-  public news: newsProxy[] = [];
+  public news: NewsProxy[] = [];
   public modelBehavior: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  public getNews(): newsProxy[] {
+  public getNews(): NewsProxy[] {
     return this.news;
   }
 
-  public setNews(news: newsProxy) {
+  public setNews(news: NewsProxy) {
     this.news.push(news);
   }
 
-  public findOne(index: number): newsProxy {
-    let news: newsProxy;
+  public findOne(index: number): NewsProxy {
+    if (!this.news[index]){
+      throw new Error('Noticia não encontrada.');
+    }
 
-    try{
-      news[index];
-    }
-    catch(e) {
-      throw 'Noticia não encontrada.'
-    }
-    finally{
-      return news[index];
-    }
+    return this.news[index];
   }
 
-  public updateOne(index: number, entity: newsProxy): newsProxy{
+  public updateOne(index: number, entity: NewsProxy): NewsProxy {
     let news;
 
-    try{
+    try {
       news = this.findOne(index);
-    }
-    finally{
+    } finally {
       news[index] = entity;
       return news[index];
     }
@@ -49,10 +48,9 @@ export class NewsService {
   public deleteOne(index: number): void {
     let news;
 
-    try{
+    try {
       news = this.findOne(index);
-    }
-    finally{
+    } finally {
       news[index].splice(index, 1);
     }
   }

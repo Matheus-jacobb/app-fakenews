@@ -1,0 +1,36 @@
+.comment{
+  display: flex;
+  padding: 1rem;
+
+  .profile{
+    padding-right: 1rem;
+    img{
+    height: 2rem;
+    border-radius: 50px;
+    object-fit: cover;
+    }
+  }
+
+  .content{
+
+    .name{
+      display: flex;
+    }
+
+    p{
+      margin: 0;
+      margin-right: 1rem;
+    }
+
+    i{
+      display: flex;
+      align-items: center;
+    }
+    .rating-success{
+      fill: #34A300;
+    }
+    .rating-fake{
+      fill: #E20000;
+    }
+  }
+}

@@ -1,3 +1,7 @@
+*{
+  animation: fadeIn 0.5s ease-in-out;
+}
+
 .card{
   position: relative;
 
@@ -24,16 +28,34 @@
   display: flex;
   justify-content: end;
 
+  &-success, &-fake{
+    font-size: 1.2rem;
+  }
+
+  &-success{
+    fill: #34A300;
+  }
+  &-fake{
+    fill: #E20000;
+  }
+
   &-background{
     display: flex;
     background-color: rgba(54, 54, 54, 0.411);
     padding: 0 .5rem;
     border-radius: 50px;
 
+    i{
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     img{
       min-width: 2rem;
     }
-    
+
     p{
       font-weight: bolder;
       padding-right: 0.5rem;
@@ -42,12 +64,13 @@
   }
 }
 
-.title{
+.title {
   z-index: 1;
   position: absolute;
   bottom: 0;
   padding: 0 1rem;
-  p{
+
+  p {
     font-weight: 500;
     font-size: large;
     letter-spacing: 0.05em;
@@ -62,3 +85,13 @@
     -webkit-box-orient: vertical;
   }
 }
+
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+

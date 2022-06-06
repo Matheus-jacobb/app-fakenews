@@ -1,7 +1,13 @@
 <app-header [activeSearchBar]="true" (searchBarValue)="searchCards($event)" ></app-header>
 <ion-content [fullscreen]="true">
 
-  <ng-container *ngFor="let new of newsFiltered">
-    <app-news-card [news]="new"></app-news-card>
+  <ng-container *ngFor="let new of newsFiltered; let idx = index">
+    <app-news-card (click)="goToDetails(idx)" [news]="new"></app-news-card>
+  </ng-container>
+
+  <ng-container *ngIf="newsFiltered?.length === 0">
+    <div class="empty-news">
+      <p>Não possui nenhuma noticia</p>
+    </div>
   </ng-container>
 </ion-content>

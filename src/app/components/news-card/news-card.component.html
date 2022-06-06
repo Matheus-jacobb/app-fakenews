@@ -1,16 +1,16 @@
-<div #card class="card" 
+<div #card class="card"
 [ngStyle]="news.imageSrc ? {'background-image': 'url(' + news.imageSrc + ')'} : {'background-color': news.color}">
 
-  <section class="ratings">
+  <section class="ratings" *ngIf="withRatings">
     <div class="ratings-background">
-      <i class="ratings-success"><img src="" alt=""></i>
+      <i><ion-icon class="ratings-success" name="checkmark-circle" color="green" ></ion-icon></i>
       <p>{{news.realRating}}</p>
-      <i class="ratings-error"><img src="" alt=""></i>
+      <i><ion-icon class="ratings-fake" name="alert-circle"></ion-icon></i>
       <p>{{news.fakeRating}}</p>
     </div>
   </section>
 
-  <section class="title">
+  <section *ngIf="withTitle" class="title">
     <p>{{news.title}}</p>
   </section>
 

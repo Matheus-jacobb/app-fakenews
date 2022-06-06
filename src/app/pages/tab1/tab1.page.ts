@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { NewsService } from 'src/app/services/news.service';
-import { newsProxy } from 'src/models/proxies/news.proxy';
-import { NewsStorage } from 'src/models/storage/news.storage';
+import { NewsProxy } from 'src/models/proxies/news.proxy';
 
 @Component({
   selector: 'app-tab1',
@@ -10,14 +10,16 @@ import { NewsStorage } from 'src/models/storage/news.storage';
 })
 export class Tab1Page {
 
-  public news: newsProxy[];
+  public news: NewsProxy[];
 
-  public newsFiltered: newsProxy[];
+  public newsFiltered: NewsProxy[];
 
   constructor(
     private readonly newsService: NewsService,
-    private readonly newsStorage: NewsStorage
-  ) { }
+    private readonly router: Router,
+  ) {
+    console.log(this.router.url);
+  }
 
   //#region public properties
 
@@ -25,8 +27,8 @@ export class Tab1Page {
 
   //#region Life-Cycle
   public ionViewDidEnter(): void {
-    console.log(this.getNews());
     this.loadNews();
+    this.checkPage();
     this.newsFiltered = [...this.news];
   }
 
@@ -39,21 +41,26 @@ export class Tab1Page {
     //TODO: IMPLEMENTS API REQUEST HERE WITH FILTER
   }
 
+  public checkPage(): void {
+    if (this.router.url.includes('mynews')) {
+      this.news = this.news.filter((value) => value.userName);
+      console.log(this.news)
+    }
+  }
+
   public loadNews(): void {
     this.news = [
-      ...this.getStorageNews(),
-      ...this.getNews()
+      ...this.getNews(),
     ];
   }
 
-  public getStorageNews(): newsProxy[] {
-    this.news = this.newsStorage.getNews();
-    return this.news;
+  public getNews(): NewsProxy[] {
+    const news = this.newsService.getNews();
+    return news;
   }
 
-  public getNews(): newsProxy[] {
-    let news = this.newsService.getNews();
-    return news;
+  public async goToDetails(id) {
+    await this.router.navigateByUrl(`/tabs/news/${ id }`);
   }
 
   //#endregion

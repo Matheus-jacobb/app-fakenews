@@ -62,11 +62,13 @@
 
 <ng-template #description >
   <app-creation-input
+  (textInput)="takeInfoForInput($event, 'description')"
   [isOptional]="true"
   [isTextArea]="true"
   [class.currentInput]="currentTab === createNewsEnum.DESCRIPTION"
   [class.swipeToLeft]="currentTab === createNewsEnum.POSTED"
-  text="Conte-nos melhor sobre o assunto"></app-creation-input>
+  text="Conte-nos melhor sobre o assunto">
+  </app-creation-input>
 </ng-template>
 
 <ng-template #posted >

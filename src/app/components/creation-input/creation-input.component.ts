@@ -19,8 +19,8 @@ export class CreationInputComponent implements OnInit {
 
   @Output()
   public textInput = new EventEmitter<string>();
-  
-  public model = '';
+
+  public model: string = '';
   //#endregion
 
   ngOnInit() {}

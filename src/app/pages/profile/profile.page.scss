@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+}
+
+.profile {
+  padding: 0 1rem;
+  height: 100%;
+}
+
+.profile-info {
+  display: flex;
+  justify-content: center;
+
+  img {
+    height: 10rem;
+    width: 10rem;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 3px solid white;
+  }
+}
+
+.title {
+  background: rgb(60, 60, 60) !important;
+}
+
+.access, .delete {
+  &--email, &--password, &--account {
+    &:active {
+      background-color: #414141 !important;
+    }
+  }
+  padding-top: 1rem;
+
+  p {
+    padding: 0.5rem;
+
+    background-color: #4D4D4D;
+  }
+}
+
+.access {
+
+  &--divider{
+    background-color: #4D4D4D;
+
+    &:after {
+      content: '';
+
+      display: block;
+
+      border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+
+      width: calc(100% - 0.5rem);
+      margin: auto;
+    }
+  }
+}
+
+.delete {
+  &--account {
+    &:active {
+      background-color: #414141;
+    }
+  }
+}

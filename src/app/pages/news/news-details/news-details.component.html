@@ -1,0 +1,26 @@
+<app-header></app-header>
+
+<div class="details">
+
+  <app-news-card [news]="news" [withRatings]="false" [withTitle]="false"></app-news-card>
+
+  <section class="ratings mb-1">
+    <div class="ratings-background">
+      <i><ion-icon class="ratings-success" name="checkmark-circle" color="green" ></ion-icon></i>
+      <p>{{news.realRating}}</p>
+      <i><ion-icon class="ratings-fake" name="alert-circle"></ion-icon></i>
+      <p>{{news.fakeRating}}</p>
+    </div>
+  </section>
+
+  <section class="description mb-1">
+    <p class="description--title"> <b>{{ news.title }}</b></p>
+    <p class="description--description">{{ news.description }}</p>
+  </section>
+
+  <section *ngIf="news.comments" class="comments mb-1">
+    <ng-container *ngFor="let comment of news.comments">
+      <app-comments [comment]="comment" ></app-comments>
+    </ng-container>
+  </section>
+</div>

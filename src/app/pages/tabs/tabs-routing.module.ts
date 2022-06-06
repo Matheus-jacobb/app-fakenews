@@ -12,18 +12,35 @@ const routes: Routes = [
         loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
       },
       {
+        path: 'mynews',
+        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+      },
+      {
         path: 'post',
         loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'news',
+        loadChildren: () => import('../news/news-details/news-details.module').then(m => m.NewsDetailsModule)
+      },
+      {
+        path: 'news/:id',
+        loadChildren: () => import('../news/news-details/news-details.module').then(m => m.NewsDetailsModule)
+      },
+      {
+        path: 'profile',
+        loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
+      },
+      {
+        path: '*',
+        redirectTo: 'feed',
+        pathMatch: 'full'
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: 'feed',
         pathMatch: 'full'
-      }
+      },
     ]
   }
 ];

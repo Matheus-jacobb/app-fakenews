@@ -1,17 +1,15 @@
 import { Component, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
-import { TouchSequence } from 'selenium-webdriver';
 import { FileToBase64Service } from 'src/app/services/fileToBase64.service';
 import { NewsService } from 'src/app/services/news.service';
-import { News } from 'src/models/classes/news';
 import { createNewsEnum } from 'src/models/enum/create-news.enum';
 import { PagesEnum } from 'src/models/enum/pages.enum';
-import { newsProxy } from 'src/models/proxies/news.proxy';
+import { NewsProxy } from 'src/models/proxies/news.proxy';
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  styleUrls: ['tab2.page.scss'],
 })
 export class Tab2Page {
 
@@ -19,7 +17,7 @@ export class Tab2Page {
     private readonly fileToBase64: FileToBase64Service,
     private readonly router: Router,
     private readonly newsService: NewsService,
-    private readonly zone: NgZone
+    private readonly zone: NgZone,
   ) { }
 
   public createNewsEnum: typeof createNewsEnum = createNewsEnum;
@@ -30,26 +28,26 @@ export class Tab2Page {
 
   public buttonEnable = true;
 
-  public news: newsProxy = {
+  public news: NewsProxy = {
     color: '',
     title: '',
     imageSrc: '',
     description: '',
     realRating: 0,
-    fakeRating: 0
+    fakeRating: 0,
   };
 
   //#region Life-Cycle
   public ionViewDidEnter(): void {
-    
+
     this.news = {
       color: '',
       title: '',
       imageSrc: '',
       description: '',
       realRating: 0,
-      fakeRating: 0
-    }
+      fakeRating: 0,
+    };
     this.currentTab = createNewsEnum.TITLE;
     this.checkDefinedFields();
   }
@@ -58,16 +56,20 @@ export class Tab2Page {
 
   public nextPage() {
     if (this.isAnimationRunning)
-      return
+      return;
 
     this.buttonEnable = true;
 
-    if (this.currentTab === createNewsEnum.POSTED) {
+    if (this.currentTab === createNewsEnum.DESCRIPTION) {
+      this.news.userName = 'user';
+      debugger
       this.newsService.setNews(this.news);
+    }
 
+    if (this.currentTab === createNewsEnum.POSTED) {
       this.zone.run(() => {
         this.router.navigate([PagesEnum.FEED]);
-      })
+      });
     }
 
     this.currentTab++;
@@ -89,11 +91,20 @@ export class Tab2Page {
     }
   }
 
-  public takeInfoForInput(value: string, type: 'title' | 'url'): void {
+  public takeInfoForInput(value: string, type: 'title' | 'url' | 'description'): void {
 
+    debugger
     // TODO: verificar erro de evento (value)
     if (typeof value === 'string' && type === 'title') {
       this.news.title = value;
+      this.buttonEnable = false;
+
+      if (value)
+        this.buttonEnable = true;
+    }
+
+    if (typeof value === 'string' && type === 'description') {
+      this.news.description = value;
       this.buttonEnable = false;
 
       if (value)

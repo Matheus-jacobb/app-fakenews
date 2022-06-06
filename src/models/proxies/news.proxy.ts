@@ -1,4 +1,6 @@
-export interface newsProxy {
+import { CommentProxy } from './comment.proxy';
+
+export interface NewsProxy {
   userName?: string;
 
   title: string;
@@ -12,4 +14,6 @@ export interface newsProxy {
   realRating: number;
 
   fakeRating: number;
+
+  comments?: CommentProxy[];
 }

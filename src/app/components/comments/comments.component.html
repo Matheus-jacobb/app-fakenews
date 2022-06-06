@@ -1,0 +1,18 @@
+<div class="comment">
+
+  <section class="profile">
+      <img [src]="comment?.profileImage" alt="">
+  </section>
+
+  <section class="content">
+    <div class="name">
+      <p> <b> {{ comment?.name || '' }}</b> </p>
+      <i><ion-icon *ngIf="comment?.rating" class="rating-success" name="checkmark-circle" color="green" ></ion-icon></i>
+      <i><ion-icon *ngIf="!comment?.rating" class="rating-fake" name="alert-circle"></ion-icon></i>
+    </div>
+    <div class="description">
+      <p>{{ comment?.description || '' }}</p>
+    </div>
+  </section>
+
+</div>

@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { newsProxy } from 'src/models/proxies/news.proxy';
+import { NewsProxy } from 'src/models/proxies/news.proxy';
 
 @Component({
   selector: 'app-news-card',
@@ -15,13 +15,20 @@ export class NewsCardComponent implements OnInit {
 
   //#region Inputs
   @Input()
-  public news: newsProxy;
+  public news: NewsProxy;
+
+  @Input()
+  public withTitle: boolean = true;
+
+  @Input()
+  public withRatings: boolean = true;
+
   //#endregion
 
   @ViewChild("card") card;
 
   ngOnInit() {
-    
+
   }
 
 }
