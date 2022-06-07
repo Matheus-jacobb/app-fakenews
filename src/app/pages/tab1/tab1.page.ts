@@ -18,7 +18,6 @@ export class Tab1Page {
     private readonly newsService: NewsService,
     private readonly router: Router,
   ) {
-    console.log(this.router.url);
   }
 
   //#region public properties
@@ -44,7 +43,6 @@ export class Tab1Page {
   public checkPage(): void {
     if (this.router.url.includes('mynews')) {
       this.news = this.news.filter((value) => value.userName);
-      console.log(this.news)
     }
   }
 

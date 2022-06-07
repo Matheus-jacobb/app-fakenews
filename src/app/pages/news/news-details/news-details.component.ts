@@ -23,7 +23,6 @@ export class NewsDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.news = this.newsService.findOne(this.newsId);
-    console.log(this.news)
   }
 
 }
