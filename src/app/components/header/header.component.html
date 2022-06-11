@@ -4,7 +4,7 @@
       <ion-title [class.disable-text]="openInput" >
         FAKE-NEWS
       </ion-title>
-  
+
       <ion-icon>
       </ion-icon>
 
@@ -15,11 +15,11 @@
         </div>
       </section>
 
-      <section class="header--profile">
+      <section *ngIf="!disableProfileImage" [routerLink]="['/tabs/profile']" class="header--profile">
         <img class="header--profile-image" src="assets/imgs/profile_photo.jpg" alt="">
       </section>
 
   </ion-header>
 
-    
+
 </section>

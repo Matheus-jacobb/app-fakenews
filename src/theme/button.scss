@@ -1,4 +1,4 @@
-button {
+.primary-button {
   position: relative;
 
   display: flex;
@@ -15,6 +15,7 @@ button {
 
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
+  overflow: hidden;
 
   ion-icon {
     font-size: 2.2rem;
@@ -22,7 +23,7 @@ button {
   }
 }
 
-button:after {
+.primary-button:after {
   position: absolute;
   content: "";
   background-color: rgb(138, 138, 138);
@@ -35,9 +36,22 @@ button:after {
   transition: all 0.8s
 }
 
-button:active:after {
+.primary-button:active:after {
   padding: 0;
   margin: 0;
   opacity: 1;
   transition: 0s
+}
+
+.disabledButton, .disable{
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.disablePointer{
+  pointer-events: none;
+}
+
+.disableOpacity{
+  opacity: 0.5;
 }

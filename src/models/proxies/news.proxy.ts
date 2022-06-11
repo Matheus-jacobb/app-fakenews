@@ -11,6 +11,8 @@ export interface NewsProxy {
 
   color: string;
 
+  url?: string;
+
   realRating: number;
 
   fakeRating: number;

@@ -13,15 +13,23 @@
   display: flex;
   justify-content: center;
 
+  .success, .fake{
+    display: flex;
+  }
+
   &-success, &-fake{
     font-size: 1.2rem;
   }
 
   &-success{
-    fill: #34A300;
+    fill: #34A300 !important;
   }
   &-fake{
-    fill: #E20000;
+    fill: #E20000 !important;
+  }
+  .disable-ratings{
+    transition: 0.2s;
+    fill: grey
   }
 
   &-background{
@@ -79,4 +87,33 @@ app-news-card{
   border-radius: 20px;
 
   background-color: #1B1B1B;
+}
+
+.rating-comment{
+
+  .ratings{
+    display: flex;
+    justify-content: space-evenly;
+
+    &-success, &-fake, .disable-ratings{
+      font-size: 2rem;
+    }
+  }
+
+  .comments--new{
+    padding: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &--input{
+      flex: 1;
+      margin-right: 1rem;
+    }
+    button{
+      height: 2rem;
+      width: 2rem;
+    }
+  }
 }

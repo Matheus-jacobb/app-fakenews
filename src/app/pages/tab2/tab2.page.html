@@ -21,11 +21,13 @@
 </ion-content>
 
 <ng-template #title >
-  <app-creation-input
-  [class.currentInput]="currentTab === createNewsEnum.TITLE"
-  [class.swipeToLeft]="currentTab === createNewsEnum.COVER_IMAGE"
-  text="Qual o título da notícia?"
-  (textInput)="takeInfoForInput($event, 'title')"></app-creation-input>
+  <div class="input-container"
+       [class.currentInput]="currentTab === createNewsEnum.TITLE"
+       [class.swipeToLeft]="currentTab === createNewsEnum.COVER_IMAGE">
+
+      <p class="mt-5-mb-5">Qual o título da notícia?</p>
+      <input class="primary-input" [(ngModel)]="news.title" (ngModelChange)="takeInfoForInput('title')" >
+  </div>
 </ng-template>
 
 <ng-template #coverImage >
@@ -53,22 +55,24 @@
 </ng-template>
 
 <ng-template #url >
-  <app-creation-input
-  [isOptional]="true"
-  [class.currentInput]="currentTab === createNewsEnum.URL"
-  [class.swipeToLeft]="currentTab === createNewsEnum.DESCRIPTION"
-  text="Qual a URL da notícia?"></app-creation-input>
+  <div class="input-container"
+       [class.currentInput]="currentTab === createNewsEnum.URL"
+       [class.swipeToLeft]="currentTab === createNewsEnum.DESCRIPTION">
+
+    <p class="mt-5-mb-5">Qual a URL da notícia?</p>
+    <input class="primary-input" [(ngModel)]="news.url" (ngModelChange)="takeInfoForInput('url')" >
+  </div>
 </ng-template>
 
 <ng-template #description >
-  <app-creation-input
-  (textInput)="takeInfoForInput($event, 'description')"
-  [isOptional]="true"
-  [isTextArea]="true"
-  [class.currentInput]="currentTab === createNewsEnum.DESCRIPTION"
-  [class.swipeToLeft]="currentTab === createNewsEnum.POSTED"
-  text="Conte-nos melhor sobre o assunto">
-  </app-creation-input>
+  <div class="input-container"
+       [class.currentInput]="currentTab === createNewsEnum.DESCRIPTION"
+       [class.swipeToLeft]="currentTab === createNewsEnum.POSTED">
+
+    <p class="mt-5-mb-5">Conte-nos melhor sobre o assunto</p>
+    <textarea class="primary-text-area" [(ngModel)]="news.description" (ngModelChange)="takeInfoForInput('description')" >
+    </textarea>
+  </div>
 </ng-template>
 
 <ng-template #posted >

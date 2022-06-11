@@ -18,10 +18,13 @@ export class HeaderComponent implements OnInit {
   //#region public Inputs/Outputs
   @Input()
   public activeSearchBar: boolean = false;
-  
+
+  @Input()
+  public disableProfileImage: boolean = false;
+
   @Output()
   public searchBarValue = new EventEmitter<string>();
-  
+
   ngOnInit() {}
 
   //#region public methods
