@@ -90,6 +90,9 @@ The url will look like http://localhost:4200
  - https://app-fakenews.vercel.app/
 <br>
 
+## **You can download app for android here (.APK)**
+ - [https://drive.google.com/file](https://drive.google.com/file/d/14A7kaHOf2gxqTUDaF-Y0v2BKn7Aostpa/view?usp=sharing)
+
 ---
 
 ## Developed by ⚙
