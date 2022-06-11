@@ -99,7 +99,7 @@ The url will look like http://localhost:4200
 
 | Author | Description |
 | :---: | :--- |
-| <img src="https://avatars.githubusercontent.com/u/70240646?v=4" width="170"> | **Matheus Jacob Bendel (https://github.com/Matheus-jacobb)**<br>RA:190299<br> Developer/Student.<br> ||
-<img src="https://avatars.githubusercontent.com/u/69996623?v=4" width="170"> | **Antonio Luis Canno de Araujo (https://github.com/tonicocanno)**<br>RA:190929<br>  Developer/Student.<br> ||
-<img src="https://avatars.githubusercontent.com/u/52716819?v=4" width="170"> | **Lucas de Abreu Furtado Garcia (https://github.com/Jornay)**<br>RA:190581<br> Developer/Student.<br> ||
-<img src="https://png.pngtree.com/element_our/20200610/ourlarge/pngtree-character-default-avatar-image_2237203.jpg" width="170"> | **Pablo Henrique Moral Monfré  (https://github.com/Pablo-monfre)**<br>RA:190142<br>  Developer/Student.<br> ||
+| <img src="https://avatars.githubusercontent.com/u/70240646?v=4" width="170"> | **Matheus Jacob Bendel (https://github.com/Matheus-jacobb)**<br>RA:190299<br> Developer/Student.<br><br>**University Informations**<br>Mobile: CP110TIN1<br>PA: PA038TIN3 ||
+<img src="https://avatars.githubusercontent.com/u/69996623?v=4" width="170"> | **Antonio Luis Canno de Araujo (https://github.com/tonicocanno)**<br>RA:190929<br>  Developer/Student.<br> <br>**University Informations**<br>Mobile: CP110TIN1<br>PA: PA038TIN3 ||
+<img src="https://avatars.githubusercontent.com/u/52716819?v=4" width="170"> | **Lucas de Abreu Furtado Garcia (https://github.com/Jornay)**<br>RA:190581<br> Developer/Student.<br> <br>**University Informations**<br>Mobile: CP110TIN1<br>PA: PA038TIN3 ||
+<img src="https://png.pngtree.com/element_our/20200610/ourlarge/pngtree-character-default-avatar-image_2237203.jpg" width="170"> | **Pablo Henrique Moral Monfré  (https://github.com/Pablo-monfre)**<br>RA:190142<br>  Developer/Student.<br> <br>**University Informations**<br>Mobile: X<br>PA: PA038TIN1 ||
