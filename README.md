@@ -36,7 +36,7 @@ The project was developed using the following technologies:
 
 ### **Step 1**
 
-1 To clone this repository, it is necessary that your machine is installed:
+To clone this repository, it is necessary that your machine is installed:
 
 - [Git](https://git-scm.com/downloads)&nbsp;( 
 To clone the repository )
@@ -46,6 +46,11 @@ First you need to clone the repository on your machine using the command below i
 `git clone https://github.com/Matheus-jacobb/app-fakenews.git`
 
 ---
+
+### **Step 2**
+
+Install NodeJs
+
  - [Node v16.14.2](https://nodejs.org/en/)
 
 Pay attention to the version needs to be **v16.14.2**
@@ -54,7 +59,14 @@ Pay attention to the version needs to be **v16.14.2**
 
 ---
 
-### **Step 2**
+### **Step 3**
+
+Install angular/cli 
+```
+npm install @angular/cli
+```
+---
+### **Step 4**
 
 After cloning/downloading the project, using your terminal , just open the folder and run the following commands:
 
@@ -65,7 +77,6 @@ npm install
 
 ### Run server that starts the site
 ```
-ionic serve
 ng serve
 ```
 
@@ -78,6 +89,9 @@ The url will look like http://localhost:4200
 ## **You can enjoy here** 
  - https://app-fakenews.vercel.app/
 <br>
+
+## **You can download app for android here (.APK)**
+ - [https://drive.google.com/file](https://drive.google.com/file/d/14A7kaHOf2gxqTUDaF-Y0v2BKn7Aostpa/view?usp=sharing)
 
 ---
 
