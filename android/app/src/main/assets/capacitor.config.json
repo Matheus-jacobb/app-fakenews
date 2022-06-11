@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "FakeNews",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

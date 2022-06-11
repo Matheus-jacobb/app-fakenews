@@ -62,7 +62,6 @@ export class Tab2Page {
 
     if (this.currentTab === createNewsEnum.DESCRIPTION) {
       this.news.userName = 'user';
-      debugger
       this.newsService.setNews(this.news);
     }
 
@@ -91,23 +90,18 @@ export class Tab2Page {
     }
   }
 
-  public takeInfoForInput(value: string, type: 'title' | 'url' | 'description'): void {
+  public takeInfoForInput(type: 'title' | 'url' | 'description'): void {
 
-    debugger
     // TODO: verificar erro de evento (value)
-    if (typeof value === 'string' && type === 'title') {
-      this.news.title = value;
-      this.buttonEnable = false;
-
-      if (value)
+    if (type === 'title') {
+      if (this.news.title)
         this.buttonEnable = true;
     }
 
-    if (typeof value === 'string' && type === 'description') {
-      this.news.description = value;
+    if (type === 'description') {
       this.buttonEnable = false;
 
-      if (value)
+      if (this.news.description)
         this.buttonEnable = true;
     }
 

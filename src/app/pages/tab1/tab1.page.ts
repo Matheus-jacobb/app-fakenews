@@ -14,11 +14,12 @@ export class Tab1Page {
 
   public newsFiltered: NewsProxy[];
 
+  public totalOfNews: number = 0;
+
   constructor(
     private readonly newsService: NewsService,
     private readonly router: Router,
   ) {
-    console.log(this.router.url);
   }
 
   //#region public properties
@@ -37,21 +38,27 @@ export class Tab1Page {
   //#region public methods
   public searchCards(value: string): void {
     this.newsFiltered = [...this.news];
-    this.newsFiltered = this.news.filter((a) => a.description.toLowerCase().includes(value.toLowerCase()));
+    this.newsFiltered = this.news.filter((a) => a.title.toLowerCase().includes(value.toLowerCase()));
     //TODO: IMPLEMENTS API REQUEST HERE WITH FILTER
   }
 
   public checkPage(): void {
     if (this.router.url.includes('mynews')) {
       this.news = this.news.filter((value) => value.userName);
-      console.log(this.news)
     }
   }
+
+  public isMyNewsPage(): boolean {
+    return !!this.router.url.includes('mynews')
+  }
+
 
   public loadNews(): void {
     this.news = [
       ...this.getNews(),
     ];
+
+    this.totalOfNews = this.news.length;
   }
 
   public getNews(): NewsProxy[] {
@@ -60,6 +67,9 @@ export class Tab1Page {
   }
 
   public async goToDetails(id) {
+    if(this.isMyNewsPage()){
+    return await this.router.navigateByUrl(`/tabs/news/${ id + this.totalOfNews - 1 }`);
+    }
     await this.router.navigateByUrl(`/tabs/news/${ id }`);
   }
 

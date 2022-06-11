@@ -1,0 +1,57 @@
+.primary-button {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 3.5rem;
+  width: 3.5rem;
+  padding: 0px;
+
+  background-color: rgb(196, 196, 196);
+
+  border-radius: 50px;
+
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  overflow: hidden;
+
+  ion-icon {
+    font-size: 2.2rem;
+    color: #000;
+  }
+}
+
+.primary-button:after {
+  position: absolute;
+  content: "";
+  background-color: rgb(138, 138, 138);
+  border-radius: 50px;
+  padding-top: 300%;
+  padding-left: 350%;
+
+  opacity: 0;
+
+  transition: all 0.8s
+}
+
+.primary-button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+.disabledButton, .disable{
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.disablePointer{
+  pointer-events: none;
+}
+
+.disableOpacity{
+  opacity: 0.5;
+}

@@ -6,10 +6,21 @@
 
   <section class="ratings mb-1">
     <div class="ratings-background">
-      <i><ion-icon class="ratings-success" name="checkmark-circle" color="green" ></ion-icon></i>
-      <p>{{news.realRating}}</p>
-      <i><ion-icon class="ratings-fake" name="alert-circle"></ion-icon></i>
-      <p>{{news.fakeRating}}</p>
+
+      <div (click)="rating(1)" class="success"
+           [class.disablePointer]="ratingChecked === 1"
+            [class.disableOpacity]="ratingChecked === 0">
+        <i><ion-icon class="ratings-success" name="checkmark-circle" color="green"  ></ion-icon></i>
+        <p>{{news.realRating}}</p>
+      </div>
+
+      <div (click)="rating(0)" class="fake"
+           [class.disablePointer]="ratingChecked === 0"
+           [class.disableOpacity]="ratingChecked === 1">
+        <i><ion-icon class="ratings-fake" name="alert-circle"></ion-icon></i>
+        <p>{{news.fakeRating}}</p>
+      </div>
+
     </div>
   </section>
 
@@ -22,5 +33,20 @@
     <ng-container *ngFor="let comment of news.comments">
       <app-comments [comment]="comment" ></app-comments>
     </ng-container>
+  </section>
+
+  <section class="rating-comment">
+    <div class="ratings">
+      <i><ion-icon (click)="ratingComment(1)" [class.ratings-success]="ratingCommentChecked === 1" class="disable-ratings" name="checkmark-circle" ></ion-icon></i>
+
+      <i><ion-icon (click)="ratingComment(0)" [class.ratings-fake]="ratingCommentChecked === 0" class="disable-ratings" name="alert-circle"></ion-icon></i>
+    </div>
+    <div class="comments--new">
+      <input
+        class="primary-input comments--new--input"
+        placeHolder="Adicionar comentário"
+        [(ngModel)]="ratingCommentText">
+      <button (click)="saveRating()" class="primary-button"><ion-icon name="arrow-forward"></ion-icon></button>
+    </div>
   </section>
 </div>
